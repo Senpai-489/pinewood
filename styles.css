@@ -1,0 +1,567 @@
+/* General Body Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header/Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1); /* Dark overlay */
+    z-index: 1;
+}
+
+.navbar {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 2;
+}
+#bgImage{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(0.7);
+    
+}   
+#logo{
+    height: 10vw;
+    width: auto;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    ;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.exclusive-offers-btn {
+    background-color: #f39c12; /* Orange */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.exclusive-offers-btn:hover {
+    background-color: #e67e22;
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding-bottom: 100px; /* Space for the form */
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.view-more-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+.booking-form {
+    position: absolute;
+    bottom: -60px; /* Adjust as needed to overlap hero and next section */
+    width: 80%;
+    
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0px;
+    z-index: 3;
+}
+
+.booking-form input,
+.booking-form .phone-input-group,
+.booking-form button {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.phone-input-group {
+    display: flex;
+    align-items: center;
+}
+
+.phone-input-group span {
+    background-color: #eee;
+    padding: 12px 10px;
+    border-right: 1px solid #ddd;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.phone-input-group input {
+    flex-grow: 1;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.booking-form button {
+    background-color: #000; 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.booking-form button:hover {
+    background-color: #494949;
+}
+
+/* About Us Section */
+.about-us-section {
+    width: 100%;
+  
+    padding: 100px 5% 50px;
+    background-color: #f9f9f9;
+    margin-top: 60px; /* To account for the booking form */
+}
+
+.about-content {
+   
+    padding-right: 50px;
+    
+}
+
+.section-title {
+    color: #f39c12;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.about-content h3 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 50px 5%;
+    background-image: url(/assets/FeaturesSectionBackground.png);
+    text-align: center;
+    filter: brightness(0.7);
+
+}
+
+.feature-card {
+    border-color: #fff;
+    border-width: 2px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    filter: brightness(2);
+    
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 3em;
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #777;
+}
+
+/* Offerings Section */
+.offerings-section {
+    text-align: center;
+    padding: 80px 5%;
+    background-color: #f1f7f9;
+}
+
+.offerings-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.offerings-section h3 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item span {
+    display: block;
+    padding: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+    background-color: #fff;
+}
+
+.testimonials-image {
+    flex: 1;
+    
+    text-align: center;
+    margin-right: 50px;
+}
+
+.testimonials-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.testimonials-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.testimonial-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.testimonial-carousel p {
+    flex-grow: 1;
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    padding: 0 20px;
+}
+
+.testimonial-carousel .nav-arrow {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #2c3e50;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.testimonial-carousel .nav-arrow:hover {
+    color: #f39c12;
+}
+
+.testimonial-carousel p a {
+    color: #f39c12;
+    font-weight: 500;
+}
+
+.guest-name {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(255, 185, 129);
+    margin-top: 10px;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #000;
+    color: #ecf0f1;
+    padding: 50px 5%;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-links .col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links .col h3 {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.footer-links .col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links .col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links .col ul li a {
+    color: #bdc3c7;
+    transition: color 0.3s ease;
+}
+
+.footer-links .col ul li a:hover {
+    color: #fff;
+}
+
+.contact-info p {
+    margin-bottom: 0px;
+    color: #bdc3c7;
+}
+
+.footer-bottom {
+    border-top: 1px solid #34495e;
+    padding-top: 20px;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #bdc3c7;
+    display:flex;
+    
+}
+
+.footer-bottom p:last-child {
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .booking-form {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .about-us-section, .testimonials-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content, .testimonials-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .testimonials-image {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .booking-form {
+        grid-template-columns: 1fr;
+        bottom: -120px;
+        width: 90%;
+    }
+
+    .hero-section {
+        padding-bottom: 180px; /* Adjust for taller form */
+    }
+
+    .about-us-section, .testimonials-section {
+        padding-top: 150px; /* More space for the form overlap */
+    }
+
+    .features-section, .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .footer-links .col {
+        min-width: 150px;
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .exclusive-offers-btn, .view-more-btn {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    .booking-form input, .phone-input-group span, .booking-form button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .about-content h2, .offerings-section h2, .testimonials-content h2 {
+        font-size: 2em;
+    }
+
+    .feature-card i {
+        font-size: 2.5em;
+    }
+
+    .gallery-item span {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
