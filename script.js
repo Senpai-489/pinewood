@@ -43,7 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
         testimonialText.innerHTML = testimonials[currentTestimonialIndex].text;
         guestName.textContent = testimonials[currentTestimonialIndex].author;
     }
-
+    setInterval(() => {
+        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+        updateTestimonial();
+    }, 5000);
     if (prevArrow && nextArrow) {
         prevArrow.addEventListener('click', () => {
             currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
