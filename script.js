@@ -40,8 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTestimonialIndex = 0;
 
     function updateTestimonial() {
-        testimonialText.innerHTML = testimonials[currentTestimonialIndex].text;
-        guestName.textContent = testimonials[currentTestimonialIndex].author;
+      
+        const container = document.querySelector('.testimonial-text');
+
+  container.classList.add('fade');
+
+  setTimeout(() => {
+    testimonialText.innerHTML = testimonials[currentTestimonialIndex].text;
+    guestName.textContent = testimonials[currentTestimonialIndex].author;
+
+    container.classList.remove('fade');
+  }, 600);
     }
     setInterval(() => {
         currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
@@ -236,18 +245,39 @@ const bookNowBtn  = document.querySelector('.book-now-btn');
 function insertToTable(source) {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-
+  
   let body;
   if (source === 'ChatBot') {
     body = JSON.stringify([
       [name, contactNumber, 'N/A', 'N/A', source]
     ]);
   } else {
-    
     const formData = new FormData(bookingForm);
     const data = Object.fromEntries(formData.entries());
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\d{10}$/;
+
+    if (!data.name || data.name.trim() === '') {
+      alert('Please enter your name');
+      document.getElementById('submitbutton').disabled = false; 
+      return;
+    }
+
+    if (!data.phone || !phoneRegex.test(data.phone)) {
+      alert('Please enter a valid 10-digit phone number');
+      document.getElementById('submitbutton').disabled = false;
+      return;
+    }
+
+    if (!data.email || !emailRegex.test(data.email)) {
+      alert('Please enter a valid email address');
+      document.getElementById('submitbutton').disabled = false;
+      return;
+    }
+
     body = JSON.stringify([
-      [data.name, data.phone, data.email, data.dates || 'N/A', source]
+      [data.name, data.phone, data.email, data.dates1 || 'N/A', data.dates2 || 'N/A', source]
     ]);
   }
 
@@ -262,16 +292,22 @@ function insertToTable(source) {
     .then(res => res.text())
     .then(result => {
       console.log('Success:', result);
-      if (source === 'WebForm') alert('Booking successful! We will get back to you soon.');
+      if (source === 'WebForm') {
+        bookingForm.reset();
+        window.location.href = 'thankyou.html'; 
+      }
     })
     .catch(err => {
       console.error('Error:', err);
       if (source === 'WebForm') alert('There was an error submitting your booking. Please try again.');
+     
+      document.getElementById('submitbutton').disabled = false;
     });
 }
-
 bookNowBtn.addEventListener('click', e => {
   e.preventDefault();
+  const btn = e.currentTarget;
+  btn.disabled = true; 
   insertToTable('WebForm');
 });
 });

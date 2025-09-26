@@ -31,12 +31,12 @@
             <form class="booking-form text-black">
                 <input type="text" name="name" placeholder="Full Name*" required>
                 <div class="phone-input-group">
-                    <span style="color: black;">+91</span>
-                    <input name="phone" type="tel" placeholder="Phone*" required>
+                    <input name="phone" type="tel" placeholder="Phone*" required pattern="[0-9]">
                 </div>
                 <input name="email" type="email" placeholder="Email*" required>
-                <input name="dates" type="text" placeholder="Select Dates*" onfocus="(this.type='date')" onblur="(this.type='text')" required>
-                <button type="submit" action="https://script.google.com/macros/s/AKfycbx6vag0usaBnirf0R5FULXBInOiMbZo0Q11NgwR3nSkmKSXGURzNZ0Town3h4eCTATZ/exec" class="book-now-btn">Book Now</button>
+                <input name="dates1" type="text" placeholder="Select Check in Date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                <input name="dates2" type="text" placeholder="Select Check out Date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                <button id="submitbutton" type="submit" class="book-now-btn">Book Now</button>
             </form>
         </div>
     </header>
@@ -137,8 +137,8 @@
             <div class="testimonial-carousel">
                 <button class="nav-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
                 <div class="testimonial-text">
-                        <p class="text-xs md:text-lg"></p>
-                         <p class="guest-name text-xl" style="color: rgb(248, 163, 52);"></p>
+                        <p class="text-xs md:text-lg  "></p>
+                         <p class="guest-name text-xl " style="color: rgb(248, 163, 52);"></p>
                     </div>
                 <button class="nav-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
             </div>

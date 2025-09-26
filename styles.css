@@ -129,14 +129,14 @@ a {
 .booking-form {
     position: absolute;
     bottom: -60px; /* Adjust as needed to overlap hero and next section */
-    width: 80%;
+    width: 90%;
     
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 0px;
     z-index: 3;
 }
@@ -149,6 +149,7 @@ a {
     border-radius: 5px;
     font-size: 1em;
     box-sizing: border-box;
+    
 }
 
 .phone-input-group {
@@ -363,6 +364,14 @@ a {
     font-size: 2.5em;
     margin-bottom: 30px;
 }
+.testimonial-text {
+  opacity: 1;
+  transition: opacity 0.6s ease;   
+}
+
+.testimonial-text.fade {
+  opacity: 0;
+}
 
 .testimonial-carousel {
     display: flex;
@@ -404,6 +413,12 @@ a {
     font-weight: 600;
     color: rgb(255, 185, 129);
     margin-top: 10px;
+        @keyframes fade{
+            0%{opacity: 0;}
+            100%{opacity: 1;}
+            
+        }
+
 }
 
 /* Footer Section */
